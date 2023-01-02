@@ -18,6 +18,15 @@
 	</servlet-mapping>
 	
 	<servlet>
+		<servlet-name>apply</servlet-name>
+		<servlet-class>com.action.apply_servlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>apply</servlet-name>
+		<url-pattern>/apply</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
 		<servlet-name>zhuanye</servlet-name>
 		<servlet-class>com.action.zhuanye_servlet</servlet-class>
 	</servlet>

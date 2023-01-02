@@ -71,7 +71,7 @@ public class admin_servlet extends HttpServlet
 	{
 		String userName=req.getParameter("userName");
 		String userPw=req.getParameter("userPw");
-		String sql="insert into t_admin values(?,?)";
+		String sql="insert into t_admin (userName, userPw) values(?,?)";
 		Object[] params={userName,userPw};
 		DB mydb=new DB();
 		mydb.doPstm(sql, params);

@@ -90,6 +90,50 @@ public class liuService
 		mydb.closed();
 		return xuehao;
 	}
+	public static int getApplyStu_id(int id)
+	{
+		int stu_id=0;
+		
+		String sql="select * from t_apply where id="+id;
+		Object[] params={};
+		DB mydb=new DB();
+		try
+		{
+			mydb.doPstm(sql, params);
+			ResultSet rs=mydb.getRs();
+			rs.next();
+			stu_id=rs.getInt("stu_id");
+			rs.close();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		mydb.closed();
+		return stu_id;
+	}
+	public static int getApplyBanji_id(int id)
+	{
+		int banji_id=0;
+		
+		String sql="select * from t_apply where id="+id;
+		Object[] params={};
+		DB mydb=new DB();
+		try
+		{
+			mydb.doPstm(sql, params);
+			ResultSet rs=mydb.getRs();
+			rs.next();
+			banji_id=rs.getInt("banji_id2");
+			rs.close();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		mydb.closed();
+		return banji_id;
+	}
 	/**
 	 * 根据学号查询学生信息
 	 * @param xuehao

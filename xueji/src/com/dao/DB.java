@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 /**
- * 与数据库的连接层
+ * 涓庢暟鎹簱鐨勮繛鎺ュ眰
  * @author Administrator
  *
  */
@@ -16,9 +16,9 @@ public class DB
 
 	private PreparedStatement pstm;
 
-	private String user = "root";
+	private String user = "root";//鏁版嵁搴撶殑杩炴帴鍚� 
 
-	private String password = "mb20020428";
+	private String password = "mb20020428";//鏁版嵁搴撶殑杩炴帴瀵嗙爜锛岄渶瑕佹敼鎴愪綘鑷繁鐨�
 
 //	private String className = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
 	private String className = "com.mysql.jdbc.Driver";
@@ -39,12 +39,12 @@ public class DB
 			Class.forName(className);
 		} catch (ClassNotFoundException e)
 		{
-			System.out.println("加载数据库驱动失败！");
+			System.out.println("鍔犺浇鏁版嵁搴撻┍鍔ㄥけ璐ワ紒");
 			e.printStackTrace();
 		}
 	}
 
-	/** 创建数据库连接 */
+	/** 鍒涘缓鏁版嵁搴撹繛鎺� */
 	public Connection getCon()
 	{
 		try
@@ -52,7 +52,7 @@ public class DB
 			con = DriverManager.getConnection(url, user, password);
 		} catch (SQLException e)
 		{
-			System.out.println("创建数据库连接失败！");
+			System.out.println("鍒涘缓鏁版嵁搴撹繛鎺ュけ璐ワ紒");
 			con = null;
 			e.printStackTrace();
 		}
@@ -82,7 +82,7 @@ public class DB
 					pstm.execute();
 				} catch (SQLException e)
 				{
-					System.out.println("doPstm()方法出错！");
+					System.out.println("doPstm()鏂规硶鍑洪敊锛�");
 					e.printStackTrace();
 				}
 			}
@@ -107,7 +107,7 @@ public class DB
 				pstm.close();
 		} catch (SQLException e)
 		{
-			System.out.println("关闭pstm对象失败！");
+			System.out.println("鍏抽棴pstm瀵硅薄澶辫触锛�");
 			e.printStackTrace();
 		}
 		try
@@ -118,7 +118,7 @@ public class DB
 			}
 		} catch (SQLException e)
 		{
-			System.out.println("关闭con对象失败！");
+			System.out.println("鍏抽棴con瀵硅薄澶辫触锛�");
 			e.printStackTrace();
 		}
 	}

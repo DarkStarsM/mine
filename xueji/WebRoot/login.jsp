@@ -28,7 +28,7 @@
 		
 		<script type='text/javascript' src='<%=path %>/dwr/interface/loginService.js'></script>
         <script type='text/javascript' src='<%=path %>/dwr/engine.js'></script>
-        <script type='text/javascript' src='<%=path %>/dwr/uti l.js'></script>
+        <script type='text/javascript' src='<%=path %>/dwr/util.js'></script>
         
 		<script language="javascript">
 		function check1()
@@ -113,7 +113,7 @@
 						<td width="85%" height="22">
 							<br/>
 							<input type="button" value="登录" style="width: 60px;" onClick="check1()">
-							<input type="reset" value="注册" style="width: 60px;">
+							<input type="reset" value="重置" style="width: 60px;">
                             <img id="indicator" src="<%=path %>/img/loading.gif" style="display:none"/>
 						</td>
 					</tr>

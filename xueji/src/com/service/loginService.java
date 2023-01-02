@@ -119,6 +119,42 @@ public class loginService
 		
 		return "yes";
     }
+    public List adminAll()
+    {
+    	try
+		{
+			Thread.sleep(700);
+		} catch (InterruptedException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+    	List adminList=new ArrayList();
+		String sql="select * from t_admin";
+		Object[] params={};
+		DB mydb=new DB();
+		try
+		{
+			mydb.doPstm(sql, params);
+			ResultSet rs=mydb.getRs();
+			while(rs.next())
+			{
+				TAdmin admin=new TAdmin();
+				admin.setUserId(rs.getInt("userId"));
+				admin.setUserName(rs.getString("userName"));
+				admin.setUserPw(rs.getString("userPw"));
+				adminList.add(admin);
+		    }
+			rs.close();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		mydb.closed();
+		return adminList;
+    }
     
     /**
      * 查询所有专业

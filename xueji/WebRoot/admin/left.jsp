@@ -72,7 +72,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 																	onMouseOver="this.style.borderStyle='solid';this.style.borderWidth='1';borderColor='#adb9c2'; "
 																	onmouseout="this.style.backgroundImage='url()';this.style.borderStyle='none'">
 																	<span class="STYLE2">
-																	    <a href='<%=path %>/admin/userinfo/userPw.jsp' target='I2'>修改个人密码</a>
+																	    <a href='<%=path %>/admin?type=adminMana' target='I2'>管理信息管理</a>
 																	</span>
 																</td>
 															</tr>
@@ -253,6 +253,46 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 																	onmouseout="this.style.backgroundImage='url()';this.style.borderStyle='none'">
 																	<span class="STYLE2">
 																	    <a href='<%=path %>/jiangcheng?type=jiangchengMana' target='I2'>奖惩信息管理</a>
+																	</span>
+																</td>
+															</tr>
+														</table>
+													</td>
+												</tr>
+												<tr>
+													<td width="41" height="35">
+														<div align="center">
+															<img src="<%=path %>/img/left_1.gif" width="31" height="31">
+														</div>
+													</td>
+													<td width="89" height="35">
+														<table width="100%" border="0" cellspacing="0" cellpadding="0">
+															<tr>
+																<td height="23" style="cursor:hand"
+																	onMouseOver="this.style.borderStyle='solid';this.style.borderWidth='1';borderColor='#adb9c2'; "
+																	onmouseout="this.style.backgroundImage='url()';this.style.borderStyle='none'">
+																	<span class="STYLE2">
+																	    <a href='<%=path %>/admin/userinfo/userPw.jsp' target='I2'>个人修改密码</a>
+																	</span>
+																</td>
+															</tr>
+														</table>
+													</td>
+												</tr>
+												<tr>
+													<td width="41" height="35">
+														<div align="center">
+															<img src="<%=path %>/img/left_1.gif" width="31" height="31">
+														</div>
+													</td>
+													<td width="89" height="35">
+														<table width="100%" border="0" cellspacing="0" cellpadding="0">
+															<tr>
+																<td height="23" style="cursor:hand"
+																	onMouseOver="this.style.borderStyle='solid';this.style.borderWidth='1';borderColor='#adb9c2'; "
+																	onmouseout="this.style.backgroundImage='url()';this.style.borderStyle='none'">
+																	<span class="STYLE2">
+																	    <a href='<%=path %>/apply?type=applyMana' target='I2'>转专业信息管理</a>
 																	</span>
 																</td>
 															</tr>
