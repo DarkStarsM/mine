@@ -12,12 +12,16 @@ public class Tstu
 	private String name1;
 	private String sex;
 	private int age;
+	private int a;
+	private int b;
+	private int c;
+	private int d;
     private int banji_id;
     private String ruxueshijian;
     private String biyeshijian;
     private String xuezhi;
     private String xuexiao;
-    
+    private String avggrade;
     private String banji_name;
 
 	public int getAge()
@@ -29,7 +33,51 @@ public class Tstu
 	{
 		this.age = age;
 	}
+	public int getA()
+	{
+		return a;
+	}
 
+	public void setA(int a)
+	{
+		this.a = a;
+	}
+	public int getB()
+	{
+		return b;
+	}
+
+	public void setB(int b)
+	{
+		this.b = b;
+	}
+	public int getC()
+	{
+		return c;
+	}
+
+	public void setC(int c)
+	{
+		this.c = c;
+	}
+	public int getD()
+	{
+		return d;
+	}
+
+	public void setD(int d)
+	{
+		this.d = d;
+	}
+	public String getavggrade()
+	{
+		return avggrade;
+	}
+
+	public void setavggrade(String avggrade)
+	{
+		this.avggrade = avggrade;
+	}
 
 	public String getBanji_name()
 	{

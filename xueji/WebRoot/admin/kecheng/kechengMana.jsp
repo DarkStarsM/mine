@@ -43,8 +43,11 @@ String path = request.getContextPath();
 				     <td height="14" colspan="100" background="<%=path %>/img/tbg.gif">&nbsp;&nbsp;</td>
 				</tr>
 				<tr align="center" bgcolor="#FAFAF1" height="22">
-					<td width="5%">序号</td>
-					<td width="40%">名称</td>
+					<td width="10%">序号</td>
+					<td width="20%">名称</td>
+					<td width="20%">分类</td>
+					<td width="20%">学分</td>
+					<td width="20%">学年</td>
 					<td width="10%">操作</td>
 		        </tr>	
 				<c:forEach items="${requestScope.kechengList}" var="kecheng" varStatus="ss">
@@ -54,6 +57,15 @@ String path = request.getContextPath();
 					</td>
 					<td bgcolor="#FFFFFF" align="center">
 						${kecheng.name}
+					</td>
+					<td bgcolor="#FFFFFF" align="center">
+						${kecheng.jieshao}
+					</td>
+					<td bgcolor="#FFFFFF" align="center">
+						${kecheng.xuefen}
+					</td>
+					<td bgcolor="#FFFFFF" align="center">
+						${kecheng.xuenian}
 					</td>
 					<td bgcolor="#FFFFFF" align="center">
 						<input type="button" value="删除" onclick="kechengDel(${kecheng.id})"/>

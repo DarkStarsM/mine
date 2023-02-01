@@ -76,13 +76,14 @@ String path = request.getContextPath();
 				<tr align="center" bgcolor="#FAFAF1" height="22">
 					<td width="10%">学号</td>
 					<td width="10%">姓名</td>
-					<td width="10%">性别</td>
-					<td width="10%">年龄</td>
+					<td width="5%">性别</td>
+					<td width="5%">年龄</td>
 					<td width="10%">班级</td>
 					<td width="10%">入学时间</td>
 					<td width="10%">毕业时间</td>
 					<td width="10%">学制</td>
 					<td width="10%">学校名称</td>
+					<td width="10%">绩点</td>
 					<td width="10%">操作</td>
 		        </tr>	
 		        <c:if test="${requestScope.msg==0}">
@@ -120,6 +121,14 @@ String path = request.getContextPath();
 					    ${stu.xuexiao}
 					</td>
 					<td bgcolor="#FFFFFF" align="center">
+					    <c:if test="${Double.parseDouble(stu.avggrade)>='1.5' }">
+                        <font >${stu.avggrade}</font>
+                        </c:if>
+                        <c:if test="${Double.parseDouble(stu.avggrade)<'1.5' }">
+                        <font color="red">${stu.avggrade}</font>
+                        </c:if>
+					</td>
+					<td bgcolor="#FFFFFF" align="center">
 					    <form action="<%=path %>/admin/stu/stuEditPre.jsp" method="post">
 						    <input type="button" value="删除" onclick="stuDel(${stu.id})" class="pn-loperator"/>
 						    <input type="hidden" name="id" value="${stu.id}"/>
@@ -132,6 +141,7 @@ String path = request.getContextPath();
 						    <input type="hidden" name="biyeshijian" value="${stu.biyeshijian}"/>
 						    <input type="hidden" name="xuezhi" value="${stu.xuezhi}"/>
 						    <input type="hidden" name=xuexiao value="${stu.xuexiao}"/>
+						    <input type="hidden" name="jidian" value="${stu.avggrade}"/>
 						    <input type="submit" value="修改"/>
 						</form>
 					</td>

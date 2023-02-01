@@ -5,14 +5,19 @@ package com.orm;
  * @author Administrator
  *
  */
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 public class Tchengji
 {
 	private int id;
 	private int stu_id;
+	private int ke_xuefen;
 	private int kecheng_id;
     private int chengji;
-	private String xuenian;
+    private String grade;
+	private String ke_xuenian;
 	private String stu_xuehao;
+	private String type;
 	private String kecheng_name;
 	
 	public int getChengji()
@@ -22,6 +27,30 @@ public class Tchengji
 	public void setChengji(int chengji)
 	{
 		this.chengji = chengji;
+	}
+	public int getKe_xuefen()
+	{
+		return ke_xuefen;
+	}
+	public void setKe_xuefen(int ke_xuefen)
+	{
+		this.ke_xuefen = ke_xuefen;
+	}
+	public String getType()
+	{
+		return type;
+	}
+	public void setType(String type)
+	{
+		this.type = type;
+	}
+	public String getGrade()
+	{
+		return grade;
+	}
+	public void setGrade(String grade)
+	{
+		this.grade = grade;
 	}
 	public int getId()
 	{
@@ -39,13 +68,13 @@ public class Tchengji
 	{
 		this.stu_id = stu_id;
 	}
-	public String getXuenian()
+	public String getKe_xuenian()
 	{
-		return xuenian;
+		return ke_xuenian;
 	}
-	public void setXuenian(String xuenian)
+	public void setXuenian(String ke_xuenian)
 	{
-		this.xuenian = xuenian;
+		this.ke_xuenian = ke_xuenian;
 	}
 	
 	public String getKecheng_name()
@@ -72,5 +101,10 @@ public class Tchengji
 	{
 		this.stu_xuehao = stu_xuehao;
 	}
-	
+	public static String format1(double value) {
+
+		 BigDecimal bd = new BigDecimal(value);
+		 bd = bd.setScale(2, RoundingMode.HALF_UP);
+		 return bd.toString();
+		}
 }

@@ -115,15 +115,15 @@ public class stu_servlet extends HttpServlet
 	}
 
 	public void stuMana(HttpServletRequest req,HttpServletResponse res) throws ServletException, IOException
-	{
+	{   
 		List stuList=new ArrayList();
-		String sql="select * from t_stu where del='no'";
-		Object[] params={};
-		DB mydb=new DB();
+		String sql1="select * from t_stu where del='no' order by avggrade desc";
+		Object[] params1={};
+		DB mydb1=new DB();
 		try
 		{
-			mydb.doPstm(sql, params);
-			ResultSet rs=mydb.getRs();
+			mydb1.doPstm(sql1, params1);
+			ResultSet rs=mydb1.getRs();
 			while(rs.next())
 			{
 				Tstu stu=new Tstu();
@@ -132,12 +132,14 @@ public class stu_servlet extends HttpServlet
 				stu.setName1(rs.getString("name1"));
 				stu.setSex(rs.getString("sex"));
 				stu.setAge(rs.getInt("age"));
+				stu.setA(liuService.getA(rs.getInt("id")));
 				stu.setBanji_id(rs.getInt("banji_id"));
 				stu.setRuxueshijian(rs.getString("ruxueshijian"));
 				stu.setBiyeshijian(rs.getString("biyeshijian"));
 				stu.setXuezhi(rs.getString("xuezhi"));
 				stu.setXuexiao(rs.getString("xuexiao"));
 				stu.setBanji_name(liuService.getBanjiName(rs.getInt("banji_id")));
+				stu.setavggrade(liuService.putgrade(rs.getInt("id")));
 				stuList.add(stu);
 		    }
 			rs.close();
@@ -146,7 +148,7 @@ public class stu_servlet extends HttpServlet
 		{
 			e.printStackTrace();
 		}
-		mydb.closed();
+		mydb1.closed();
 		if(stuList.size()==0)
 		{
 			req.setAttribute("msg", 0);
@@ -250,6 +252,10 @@ public class stu_servlet extends HttpServlet
 				stu.setName1(rs.getString("name1"));
 				stu.setSex(rs.getString("sex"));
 				stu.setAge(rs.getInt("age"));
+				stu.setA(liuService.getA(rs.getInt("id")));
+				stu.setB(liuService.getB(rs.getInt("id")));
+				stu.setC(liuService.getC(rs.getInt("id")));
+				stu.setD(liuService.getD(rs.getInt("id")));
 				stu.setBanji_id(rs.getInt("banji_id"));
 				stu.setRuxueshijian(rs.getString("ruxueshijian"));
 				stu.setBiyeshijian(rs.getString("biyeshijian"));

@@ -57,9 +57,11 @@ public class kecheng_servlet extends HttpServlet
 	{
 		String name=req.getParameter("name");
 		String jieshao=req.getParameter("jieshao");
+		int xuefen=Integer.parseInt(req.getParameter("xuefen"));
+		String xuenian=req.getParameter("xuenian");
 		String del="no";
-		String sql="insert into t_kecheng values(default,?,?,?)";
-		Object[] params={name,jieshao,del};
+		String sql="insert into t_kecheng values(default,?,?,?,?,?)";
+		Object[] params={name,xuefen,xuenian,jieshao,del};
 		DB mydb=new DB();
 		mydb.doPstm(sql, params);
 		mydb.closed();
@@ -101,7 +103,9 @@ public class kecheng_servlet extends HttpServlet
 				Tkecheng kecheng=new Tkecheng();
 				kecheng.setId(rs.getInt("id"));
 				kecheng.setName(rs.getString("name"));
-				kecheng.setJieshao(rs.getString("jieshao"));
+				kecheng.setJieshao(rs.getString("type"));
+				kecheng.setXuefen(rs.getInt("xuefen"));
+				kecheng.setXuenian(rs.getString("xuenian"));
 				kechengList.add(kecheng);
 		    }
 			rs.close();

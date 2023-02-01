@@ -42,31 +42,27 @@ String path = request.getContextPath();
 				     <td height="14" colspan="100" background="<%=path %>/img/tbg.gif">&nbsp;&nbsp;</td>
 				</tr>
 				<tr align="center" bgcolor="#FAFAF1" height="22">
-					<td width="10%">序号</td>
-					<td width="10%">序号</td>
+					<td width="20%">序号</td>
+					
 					<td width="20%">学生学号</td>
 					<td width="20%">所在班级</td>
-					<td width="10%">序号</td>
-					<td width="15%">意向班级</td>
-					<td width="15%">操作</td>
+					
+					<td width="20%">意向班级</td>
+					<td width="20%">操作</td>
 		        </tr>	
 				<c:forEach items="${requestScope.applyList}" var="apply">
 				<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
 					<td bgcolor="#FFFFFF" align="center">
 						${apply.id}
 					</td>
-					<td bgcolor="#FFFFFF" align="center">
-						${apply.stu_id}
-					</td>
+					
 					<td bgcolor="#FFFFFF" align="center">
 						${apply.stu_xuehao}
 					</td>
 					<td bgcolor="#FFFFFF" align="center">
 						${apply.banji_name}
 					</td>
-					<td bgcolor="#FFFFFF" align="center">
-						${apply.banji_id2}
-					</td>
+					
 					<td bgcolor="#FFFFFF" align="center">
 						${apply.banji_name2}
 					</td>

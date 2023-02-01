@@ -39,6 +39,30 @@ String path = request.getContextPath();
 						</tr>
 						<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
 						    <td width="25%" bgcolor="#FFFFFF" align="right">
+						                分类：
+						    </td>
+						    <td width="75%" bgcolor="#FFFFFF" align="left">
+						        <input type="text" name="jieshao" size="60"/>
+						    </td>
+						</tr>
+						<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
+						    <td width="25%" bgcolor="#FFFFFF" align="right">
+						                学分：
+						    </td>
+						    <td width="75%" bgcolor="#FFFFFF" align="left">
+						        <input type="text" name="xuefen" size="60"/>
+						    </td>
+						</tr>
+						<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
+						    <td width="25%" bgcolor="#FFFFFF" align="right">
+						                学年：
+						    </td>
+						    <td width="75%" bgcolor="#FFFFFF" align="left">
+						        <input type="text" name="xuenian" size="60"/>
+						    </td>
+						</tr>
+						<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
+						    <td width="25%" bgcolor="#FFFFFF" align="right">
 						        &nbsp;
 						    </td>
 						    <td width="75%" bgcolor="#FFFFFF" align="left">

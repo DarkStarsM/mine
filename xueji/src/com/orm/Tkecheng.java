@@ -10,6 +10,17 @@ public class Tkecheng
 	private String name;
 	private String jieshao;
 	private String del;
+	private String xuenian;
+	
+	private int xuefen;
+	public String getXuenian()
+	{
+		return xuenian;
+	}
+	public void setXuenian(String xuenian)
+	{
+		this.xuenian = xuenian;
+	}
 	public String getDel()
 	{
 		return del;
@@ -18,6 +29,7 @@ public class Tkecheng
 	{
 		this.del = del;
 	}
+	
 	public int getId()
 	{
 		return id;
@@ -25,6 +37,14 @@ public class Tkecheng
 	public void setId(int id)
 	{
 		this.id = id;
+	}
+	public int getXuefen()
+	{
+		return xuefen;
+	}
+	public void setXuefen(int xuefen)
+	{
+		this.xuefen = xuefen;
 	}
 	public String getJieshao()
 	{

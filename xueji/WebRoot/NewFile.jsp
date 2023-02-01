@@ -14,7 +14,7 @@
 		<meta http-equiv="expires" content="0">
 		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 		<meta http-equiv="description" content="This is my page">
-	<style type="text/css">
+		<style type="text/css">
             body
             {  
                  background:url('img/liu3718.jpg');  

@@ -1,3 +1,4 @@
+
 <%@ page language="java" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -57,84 +58,85 @@ String path = request.getContextPath();
 	</head>
 
 	<body leftmargin="2" topmargin="9" background='<%=path %>/img/allbg.gif'>
+	        
 			<form action="<%=path %>/stu?type=stuEdit" name="formAdd" method="post">
-				     <table width="98%" align="center" border="0" cellpadding="4" cellspacing="1" bgcolor="#CBD8AC" style="margin-bottom:8px">
-						<tr bgcolor="#EEF4EA">
-					        <td colspan="3" background="<%=path %>/img/wbg.gif" class='title'><span>学生录入</span></td>
-					    </tr>
-						<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
-						    <td width="25%" bgcolor="#FFFFFF" align="right">
-						         学号：
-						    </td>
-						    <td width="75%" bgcolor="#FFFFFF" align="left">
-						        <input type="text" name="xuehao" size="20" value="${requestScope.stu.xuehao}"/>
-						    </td>
-						</tr>
-						<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
-						    <td width="25%" bgcolor="#FFFFFF" align="right">
-						        姓名：
-						    </td>
-						    <td width="75%" bgcolor="#FFFFFF" align="left">
-						         <input type="text" name="name1" size="20" value="${requestScope.stu.name1}"/>
-						    </td>
-						</tr>
-						<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
-						    <td width="25%" bgcolor="#FFFFFF" align="right">
-						        性别：
-						    </td>
-						    <td width="75%" bgcolor="#FFFFFF" align="left">
-						         ${requestScope.stu.xuehao}
-						    </td>
-						</tr>
-						<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
-						    <td width="25%" bgcolor="#FFFFFF" align="right">
-						        年龄：
-						    </td>
-						    <td width="75%" bgcolor="#FFFFFF" align="left">
-						         <input type="text" value="${requestScope.stu.age}" name="age" size="20" onpropertychange="onchange1(this.value)" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"/>
-						    </td>
-						</tr>
-						<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
-						    <td width="25%" bgcolor="#FFFFFF" align="right">
-						        入学时间：
-						    </td>
-						    <td width="75%" bgcolor="#FFFFFF" align="left">
-						         <input name="ruxueshijian" value="${requestScope.stu.ruxueshijian}"/>
-						    </td>
-						</tr>
-						<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
-						    <td width="25%" bgcolor="#FFFFFF" align="right">
-						        毕业时间：
-						    </td>
-						    <td width="75%" bgcolor="#FFFFFF" align="left">
-						         <input name="biyeshijian" value="${requestScope.stu.biyeshijian}"/>
-						    </td>
-						</tr>
-						<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
-						    <td width="25%" bgcolor="#FFFFFF" align="right">
-						        学制：
-						    </td>
-						    <td width="75%" bgcolor="#FFFFFF" align="left">
-						         <input type="text" name="xuezhi" size="20" value="${requestScope.stu.xuezhi}"/>
-						    </td>
-						</tr>
-						<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
-						    <td width="25%" bgcolor="#FFFFFF" align="right">
-						        学校名称：
-						    </td>
-						    <td width="75%" bgcolor="#FFFFFF" align="left">
-						         <input type="text" name="xuexiao" size="20" value="${requestScope.stu.xuexiao}"/>
-						    </td>
-						</tr>
-						<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
-						    <td width="25%" bgcolor="#FFFFFF" align="right">
-						        &nbsp;
-						    </td>
-						    <td width="75%" bgcolor="#FFFFFF" align="left">
-						       <input type="button" value="打印" style="width: 80px;" onclick="p()" />
-						    </td>
-						</tr>
-					 </table>
+			<table width="60%" border="0" cellpadding="2" cellspacing="1" bgcolor="#D1DDAA" align="center" style="margin-top:8px">
+				<tr bgcolor="#E7E7E7">
+				     <td height="14" colspan="100" background="<%=path %>/img/tbg.gif">&nbsp;&nbsp;</td>
+				</tr>
+				<tr align="center" bgcolor="#FAFAF1" height="22">
+				    <td width="30%">课程类型</td>
+					<td width="30%">要求学分</td>
+					<td width="30%">已修学分</td>
+		        </tr>
+				<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
+					<td bgcolor="#FFFFFF" align="center">
+						通识课程
+					</td>
+					<td bgcolor="#FFFFFF" align="center">
+						5
+					</td>
+					<td bgcolor="#FFFFFF" align="center">
+					    <c:if test="${requestScope.stu.a>='5' }">
+                        <font>${requestScope.stu.a}</font>
+                        </c:if>
+                        <c:if test="${requestScope.stu.a<'5' }">
+                        <font color="red">${requestScope.stu.a}</font>
+                        </c:if>
+						
+					</td>
+				</tr>
+				<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
+					<td bgcolor="#FFFFFF" align="center">
+						大类基础课
+					</td>
+					<td bgcolor="#FFFFFF" align="center">
+						6
+					</td>
+					<td bgcolor="#FFFFFF" align="center">
+						 <c:if test="${requestScope.stu.b>='6' }">
+                        <font>${requestScope.stu.b}</font>
+                        </c:if>
+                        <c:if test="${requestScope.stu.b<'6' }">
+                        <font color="red">${requestScope.stu.b}</font>
+                        </c:if>
+						
+					</td>
+				</tr>
+				<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
+					<td bgcolor="#FFFFFF" align="center">
+						专业课程
+					</td>
+					<td bgcolor="#FFFFFF" align="center">
+						6
+					</td>
+					<td bgcolor="#FFFFFF" align="center">
+						 <c:if test="${requestScope.stu.c>='6' }">
+                        <font>${requestScope.stu.c}</font>
+                        </c:if>
+                        <c:if test="${requestScope.stu.c<'6' }">
+                        <font color="red">${requestScope.stu.c}</font>
+                        </c:if>
+						
+					</td>
+				</tr>
+			    <tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
+					<td bgcolor="#FFFFFF" align="center">
+						实践课程
+					</td>
+					<td bgcolor="#FFFFFF" align="center">
+						5
+					</td>
+					<td bgcolor="#FFFFFF" align="center">
+						 <c:if test="${requestScope.stu.d>='6' }">
+                        <font>${requestScope.stu.d}</font>
+                        </c:if>
+                        <c:if test="${requestScope.stu.d<'6' }">
+                        <font color="red">${requestScope.stu.d}</font>
+                        </c:if>
+						
+					</td>
+				</tr>
 			</form>
    </body>
 </html>

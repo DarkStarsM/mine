@@ -44,10 +44,13 @@ String path = request.getContextPath();
 				</tr>
 				<tr align="center" bgcolor="#FAFAF1" height="22">
 					<td width="20%">学生学号</td>
-					<td width="20%">课程</td>
-					<td width="20%">成绩</td>
-					<td width="20%">学年</td>
-					<td width="20%">操作</td>
+					<td width="15%">课程</td>
+					<td width="15%">类型</td>
+					<td width="10%">成绩</td>
+					<td width="10%">绩点</td>
+					<td width="10%">学分</td>
+					<td width="10%">学年</td>
+					<td width="10%">操作</td>
 		        </tr>	
 				<c:forEach items="${requestScope.chengjiList}" var="chengji">
 				<tr align='center' bgcolor="#FFFFFF" onMouseMove="javascript:this.bgColor='red';" onMouseOut="javascript:this.bgColor='#FFFFFF';" height="22">
@@ -58,10 +61,29 @@ String path = request.getContextPath();
 						${chengji.kecheng_name}
 					</td>
 					<td bgcolor="#FFFFFF" align="center">
-						${chengji.chengji}
+						${chengji.type}
 					</td>
 					<td bgcolor="#FFFFFF" align="center">
-						${chengji.xuenian}
+						<c:if test="${chengji.chengji>='60' }">
+                        <font >${chengji.chengji}</font>
+                        </c:if>
+                        <c:if test="${chengji.chengji<'60' }">
+                        <font color="red">${chengji.chengji}</font>
+                        </c:if>
+					</td>
+					<td bgcolor="#FFFFFF" align="center">
+					   	<c:if test="${Double.parseDouble(chengji.grade)>='1' }">
+                        <font>${chengji.grade}</font>
+                        </c:if>
+                        <c:if test="${Double.parseDouble(chengji.grade)<'1' }">
+                        <font color="red">${chengji.grade}</font>
+                        </c:if>
+					</td>
+					<td bgcolor="#FFFFFF" align="center">
+						${chengji.ke_xuefen}
+					</td>
+					<td bgcolor="#FFFFFF" align="center">
+						${chengji.ke_xuenian}
 					</td>
 					<td bgcolor="#FFFFFF" align="center">
 						<input type="button" value="删除" onclick="chengjiDel(${chengji.id})"/>
